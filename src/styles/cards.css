@@ -1,0 +1,9 @@
+.cardContainer{
+    width: 21rem;
+    margin: 20px; 
+}
+
+.cardTitle {
+    font-family: Copperplate;
+    font-size: 25px !important;
+}

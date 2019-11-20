@@ -1,0 +1,13 @@
+.inputBox{
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #8C8984;
+    border-radius: 20px;
+    padding: 10px ;
+    font-family: "Monaco";
+    width: 225px;
+}
+
+.submitBtn{
+    margin: 10px auto;
+}
