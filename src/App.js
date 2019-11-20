@@ -7,6 +7,9 @@ import InstagramCard from './components/SocialMediaComponents/InstagramCard';
 import YoutubeCard from './components/SocialMediaComponents/YoutubeCard';
 import Footer from './components/Footer';
 import './App.css';
+import telegramIcon from './assets/images/telegramIcon.png';
+import spotifyIcon from './assets/images/spotifyIcon.png';
+import { SocialIcon } from 'react-social-icons';
 
 // Github API : https://api.github.com/users/bhatvikrant
 
@@ -54,9 +57,8 @@ class App extends Component {
     };
   }
 
-  getGithubUser = (e) => {
-    e.preventDefault();
-    const user = e.target.elements.username.value;
+  componentDidMount() {
+    const user = "tanaypratap";
     axios.get(`https://api.github.com/users/${user}`)
       .then((res) => {
         // console.log("github resposnse", res);
@@ -90,11 +92,8 @@ class App extends Component {
         // console.log(err);
         alert("Please Enter a valid Github username");
       });
-  }
 
-  getInstaUser = (e) => {
-    e.preventDefault();
-    const instaUser = e.target.elements.instaUsername.value;
+    const instaUser = "tanaypratap";
     axios.get(`https://instagram.com/${instaUser}/?__a=1`)
       .then((resp) => {
         // console.log("Instagram Response", resp);
@@ -121,11 +120,8 @@ class App extends Component {
         // console.log(err);
         alert("Please Enter a valid Instagram username");
       });
-  };
 
-  getYoutubeChannel = (e) => {
-    e.preventDefault();
-    const YTchannelID = e.target.elements.YTchannelId.value;
+    const YTchannelID = "UCNFmBuclxQPe57orKiQbyfA";
     axios.get(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${YTchannelID}&key=AIzaSyDHV4U1dY3efYdKf_3cOH8uSEjwBjZaxpU`)
       .then((respo) => {
         // console.log("Youtube Response", respo);
@@ -143,30 +139,59 @@ class App extends Component {
         // console.log(err);
         alert("Please Enter a valid Youtube channel ID");
       });
-  };
+  }
 
   render() {
     return (
       <div style={{ backgroundColor: "#74C2E1", padding: "0px", overflowX: "hidden", minHeight: '100%' }}>
         <center>
-          <h1 style={{ marginTop: '50px', fontFamily: "Marker Felt, fantasy", color: 'black' }}>Social Media Stats Summary:</h1>
+          <h1 style={{ marginTop: '50px', fontFamily: "Marker Felt, fantasy", color: 'black' }}>Tanay's Online Presence :)</h1>
           <div className="flex-wrapper">
             <div className="container">
               <Row style={{ padding: "0px" }}>
                 <Col style={{ padding: "0px", margin: "0px" }} sm={4} md={4} lg={true}>
-                  <GithubCard getGithubUser={this.getGithubUser} {...this.state} />
+                  <GithubCard {...this.state} />
                 </Col>
                 <Col style={{ padding: "0px" }} sm={4} md={4} lg={true}>
-                  <InstagramCard getInstaUser={this.getInstaUser} {...this.state} />
+                  <InstagramCard {...this.state} />
                 </Col>
                 <Col style={{ padding: "0px" }} sm={4} md={4} lg={true}>
-                  <YoutubeCard getYoutubeChannel={this.getYoutubeChannel} {...this.state} />
+                  <YoutubeCard {...this.state} />
+                </Col>
+              </Row>
+            </div>
+
+            <div style={{ margin: "10px" }} >
+              <Row>
+                <Col xs={12} md={6}><span style={{ margin: "10px" }}>
+                  <img src={spotifyIcon} height="50px" width="50px" alt="spotifyIcon" style={{ margin: "10px" }} />
+                  <a href="https://open.spotify.com/show/3dDVSp6sK7EGfw09jkvIl8?si=dkjghSOLSnawJ3pgkFaHwQ" style={{ color: "white" }}>Listen to teawithtanay - Podcast by Tanay</a>
+                </span>
+                </Col>
+                <Col xs={12} md={6}><span style={{ margin: "10px" }}>
+                  <img src={telegramIcon} height="70px" width="70px" alt="telegramIcon" style={{ margin: "10px" }} />
+                  <a href="https://t.me/joinchat/JCR_m024H9lVLCJhwHw_xA" style={{ color: "white" }}>Join #TeamTanay on Telegram</a>
+                  </span>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12} md={6}>
+                  <SocialIcon url="https://www.facebook.com/tanay.pratap" bgColor="white" fgColor="#3b5998" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }}/>
+                  <span><a href="https://www.facebook.com/tanay.pratap" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Follow Tanay on Facebook</a></span>
+                </Col>
+                <Col xs={12} md={6}>
+                  <SocialIcon url="https://twitter.com/tanaypratap" bgColor="white" fgColor="#74C2E1" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }}/>
+                  <span><a href="https://twitter.com/tanaypratap" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Follow Tanay on Twitter</a></span>
                 </Col>
               </Row>
             </div>
             <div style={{ padding: '20px' }}>
+              <a style={{ fontFamily: "Arial", color: "black", fontSize: '20px' }} href="https://social-media-stats-summary.netlify.com/" target="_blank" rel="noopener noreferrer">Want to view your own stats? (click here)</a>
+            </div>
+            <div style={{ padding: '20px' }}>
               <span style={{ fontFamily: "cursive", color: "white", fontSize: '30px' }}>~Come lets Analyse some Stats~</span>
             </div>
+
             <Footer style={{ marginBottom: "0px" }} />
           </div>
         </center>
