@@ -165,22 +165,22 @@ class App extends Component {
               <Row>
                 <Col xs={12} md={6}><span style={{ margin: "10px" }}>
                   <img src={spotifyIcon} height="50px" width="50px" alt="spotifyIcon" style={{ margin: "10px" }} />
-                  <a href="https://open.spotify.com/show/3dDVSp6sK7EGfw09jkvIl8?si=dkjghSOLSnawJ3pgkFaHwQ" style={{ color: "white" }}>Listen to teawithtanay - Podcast by Tanay</a>
+                  <a href="https://open.spotify.com/show/3dDVSp6sK7EGfw09jkvIl8?si=dkjghSOLSnawJ3pgkFaHwQ" style={{ color: "white" }} target="_blank" rel="noopener noreferrer">Listen to teawithtanay - Podcast by Tanay</a>
                 </span>
                 </Col>
                 <Col xs={12} md={6}><span style={{ margin: "10px" }}>
                   <img src={telegramIcon} height="70px" width="70px" alt="telegramIcon" style={{ margin: "10px" }} />
-                  <a href="https://t.me/joinchat/JCR_m024H9lVLCJhwHw_xA" style={{ color: "white" }}>Join #TeamTanay on Telegram</a>
-                  </span>
+                  <a href="https://t.me/joinchat/JCR_m024H9lVLCJhwHw_xA" style={{ color: "white" }} target="_blank" rel="noopener noreferrer">Join #TeamTanay on Telegram</a>
+                </span>
                 </Col>
               </Row>
               <Row>
                 <Col xs={12} md={6}>
-                  <SocialIcon url="https://www.facebook.com/tanay.pratap" bgColor="white" fgColor="#3b5998" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }}/>
+                  <SocialIcon url="https://www.facebook.com/tanay.pratap" bgColor="white" fgColor="#3b5998" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }} />
                   <span><a href="https://www.facebook.com/tanay.pratap" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Follow Tanay on Facebook</a></span>
                 </Col>
                 <Col xs={12} md={6}>
-                  <SocialIcon url="https://twitter.com/tanaypratap" bgColor="white" fgColor="#74C2E1" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }}/>
+                  <SocialIcon url="https://twitter.com/tanaypratap" bgColor="white" fgColor="#74C2E1" target="_blank" rel="noopener noreferrer" style={{ margin: "10px" }} />
                   <span><a href="https://twitter.com/tanaypratap" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Follow Tanay on Twitter</a></span>
                 </Col>
               </Row>
